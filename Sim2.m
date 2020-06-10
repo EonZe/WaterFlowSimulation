@@ -12,4 +12,5 @@ Z1 = interp1(vr,vv,abs(sqrt((X-POS(1)).^2+(Y-POS(2)).^2))-20);
 Z2 = interp1(vr,vv,abs(sqrt((X-POS2(1)).^2+(Y-POS2(2)).^2))-20);
 Z3 = interp1(vr,vv,abs(sqrt((X-POS3(1)).^2+(Y-POS3(2)).^2))-20);
 Z=Z1-Z2+Z3;
-
+h=pcolor(x, y, Z);
+set(h, 'EdgeColor', 'none');

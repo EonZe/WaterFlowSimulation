@@ -6,11 +6,8 @@ centers= getCenters(CENTER,NUM_STEB,MIDRAD);
 
 RSTEB=40;           %r stebra
 MAX=200;           %meje racunanja
-STEP=5;            %korak racunanja
+STEP=1;            %korak racunanja
 
-%TODO:
-%-barve
-%-GUI
 x = -MAX:STEP:MAX; 
 
 [X,Y] = meshgrid(x,x); %y =x matrike racunanih tock
@@ -65,7 +62,9 @@ for x=-MAX:STEP:MAX
     scalars2=[scalars2;srow2];
 end
 figure(1)
-contour(X,Y,scalars,100)
+h=pcolor(X, Y, scalars);
+h.FaceColor = 'interp';
+set(h, 'EdgeColor', 'none');
 title('Rotational speed v_r')
 colorbar;
 hold on
@@ -73,11 +72,11 @@ quiver(X,Y,xs,ys) %risanje vektorjev
 hold off
 
 figure(2)
-contour(X,Y,scalars2,100)
+h=pcolor(X, Y, scalars);
+h.FaceColor = 'interp';
+set(h, 'EdgeColor', 'none');
 title('Tangential speed v_0')
 colorbar;
 hold on
 quiver(X,Y,xs2,ys2) %risanje vektorjev
 hold off
-
-return;
