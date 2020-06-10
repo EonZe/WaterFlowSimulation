@@ -1,3 +1,4 @@
+function [vr,vv,vr1] = integral1()
 format shortEng
 %format compact
 %[msg, id] = lastwarn;
@@ -69,6 +70,7 @@ vk3=[vk2,vk3];
 k=k+1;
 end
 
+return;
 figure(2)
 plot(vr,vv)
 grid
@@ -82,3 +84,4 @@ legend('v_r','average v_r');
 xlabel('r [\mum]')
 ylabel('v_r [rd/s]')
 title('Rotational speed v_r against distance from the pillar')
+end
