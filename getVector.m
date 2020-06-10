@@ -1,5 +1,14 @@
 function [vector] = getVector(p,c,r,sx,sy)
-%polozaj tocke
+% getVector(p,c,r,sx,sy) - Calculates vector from provided data
+% p=[x,y] - vector origin
+% c=[x,y] - pillar center
+% r - pillar radius
+% sx=[...] - x values for interpolation
+% sy=[...] - y values for interpolation
+%
+% Example: x=getVector([x,y],[0,0],40,[...],[...]);
+% Returns: vector=[x,y] - calculated vector
+
 x=p(1);
 y=p(2);
 

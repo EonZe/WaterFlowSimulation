@@ -1,8 +1,24 @@
 function [X,Y,scalars,xs,ys] = getData(px,py,CENTER,MIDRAD, NUM_STEB,RSTEB,MAX,STEP)
+% getData(px,py,CENTER,MIDRAD, NUM_STEB,RSTEB,MAX,STEP) - Calculates
+% required vectors and scalars - Provide all distance units in μm
+% px=[...] - x values for interpolation
+% py=[...] - y values for interpolation
+% CENTER - pillars circle center
+% num - number of pillars
+% r - radius of circle - pillar distance from center
+% RSTEB - pillar radius
+% MAX - Calculation bounds: Calculates from [-MAX,-MAX] to [MAX,MAX]
+% STEP - Calculation step
+%
+% Example: x=getData(1:10,2*(1:10),[0,0],120,8,40,200,5);
+% Returns: [X,Y,scalars,xs,ys]
+%   X,Y - meshgrid vectors (from -MAX to MAX)
+%   scalars - scalar values of vectors - for colormap
+%   xs, ys - x and y values of vectors
     centers= getCenters(CENTER,NUM_STEB,MIDRAD);
     x = -MAX:STEP:MAX; 
 
-    [X,Y] = meshgrid(x,x); %y =x matrike racunanih tock
+    [X,Y] = meshgrid(x); %y =x matrike racunanih tock
     scalars=[];         %skalarne vrednosti 1
 
     xs=[];              %x matrika vrednosti vektorjev

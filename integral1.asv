@@ -2,15 +2,12 @@ function [vr,vv,vr1] = integral1(A,a,dr,ni,f)
 % integral1(A,a,dr,ni,f) Calculates speed data for further useage
 % A - amplitude of circular vibrations
 % a - pillar radius
-% dr - distance step
-% ni - x values for interpolation
-% f - frequency
+% dr - st
+% sx=[...] - x values for interpolation
+% sy=[...] - y values for interpolation
 %
 % Example: x=getVector([x,y],[0,0],40,[...],[...]);
-% Returns: vector=[vr,vv,vr1]
-%   vr - x values
-%   vv - speed data
-%   vr1 
+% Returns: vector=[x,y] - calculated vector
 format shortEng
 %format compact
 %[msg, id] = lastwarn;
